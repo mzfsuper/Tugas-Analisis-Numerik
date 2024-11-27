@@ -97,6 +97,18 @@ def left_sum(f, a, b, n):
 iki = left_sum(function, a, b, n)
 print(f"Integral dari fungsi dengan jumlah kanan dari x = {a} sampai x = {b} sebanyak {n} partisi adalah {iki}")
 
+"""Jumlah Pusat"""
+
+def central_sum(f, a, b, n):
+  h = (b - a) / n
+  sum = 0
+  for i in range(n):
+    sum += f(a + (i + 0.5)*h)
+  return sum * h
+
+ipu = central_sum(function, a, b, n)
+print(f"Integral dari fungsi dengan jumlah kanan dari x = {a} sampai x = {b} sebanyak {n} partisi adalah {ipu}")
+
 """Midpoint rule"""
 
 def midpoint_sum(f, a, b, n):
